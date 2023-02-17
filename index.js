@@ -16,6 +16,7 @@ const productsList = document.querySelector('.container-items');
 
 // Variable de arreglos de Productos
 let allProducts = [];
+let todos_los_productos = [];
 
 const valorTotal = document.querySelector('.total-pagar');
 
@@ -51,7 +52,7 @@ productsList.addEventListener('click', e => {
 		} else {
 			allProducts = [...allProducts, infoProduct];
 		}
-
+        
 		showHTML();
 	}
 });
@@ -65,7 +66,6 @@ rowProduct.addEventListener('click', e => {
 			product => product.title !== title
 		);
 
-		console.log(allProducts);
 
 		showHTML();
 	}
@@ -125,3 +125,37 @@ const showHTML = () => {
 	valorTotal.innerText = `$${total}`;
 	countProducts.innerText = totalOfProducts;
 };
+
+//BUSCADOR
+
+/* let item_a_buscar = "";
+document.addEventListener("keyup",e=>{
+    e.target.matches("#buscador")
+
+    console.log(e.target.value)
+
+    }) */
+todos_los_productos = ["zapatos nike", "audifonos","reloj","smartwatch", "perfume"]
+document.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.target.matches("#buscador")
+        item_a_buscar = event.target.value;
+        
+        if(todos_los_productos.includes(item_a_buscar)){
+            msj = "el producto existe!"
+        }
+        else { 
+            msj = "el producto no existe!"
+            
+        }
+        alert(msj)
+    }
+   
+}) 
+
+
+
+
+
+
+
