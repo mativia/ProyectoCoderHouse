@@ -193,8 +193,12 @@ header{
 
 .cart-empty{
     padding: 20px;
-    text-align: center;8
+    text-align: center;
 }
 .hidden{
+    display: none;
+}
+
+.filtro{
     display: none;
 }

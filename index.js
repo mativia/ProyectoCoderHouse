@@ -16,6 +16,7 @@ const productsList = document.querySelector('.container-items');
 
 // Variable de arreglos de Productos
 let allProducts = [];
+allProducts = JSON.parse(localStorage.getItem('carrito')); 
 let todos_los_productos = [];
 
 const valorTotal = document.querySelector('.total-pagar');
@@ -88,7 +89,7 @@ const showHTML = () => {
 
 	let total = 0;
 	let totalOfProducts = 0;
-
+	
 	allProducts.forEach(product => {
 		const containerProduct = document.createElement('div');
 		containerProduct.classList.add('cart-product');
@@ -121,20 +122,42 @@ const showHTML = () => {
 			total + parseInt(product.quantity * product.price.slice(1));
 		totalOfProducts = totalOfProducts + product.quantity;
 	});
+	//local storage
+	localStorage.setItem('carrito', JSON.stringify(allProducts));
+	
+	
+	
+	/* const guardar = (clave, valor) => {
+		localStorage.setItem(clave,valor);
 
+	}
+	allProducts.forEach(item => {
+		guardar(item.title, JSON.stringify(item))
+	}) */
+	
 	valorTotal.innerText = `$${total}`;
 	countProducts.innerText = totalOfProducts;
 };
 
-//BUSCADOR
+/* let producto = localStorage.getItem('producto');
+let pro = JSON.parse(producto);
+console.log(pro[0]); */
+//Storage 
+/* console.log(localStorage);
+localStorage.setItem("product","01") */
 
-/* let item_a_buscar = "";
-document.addEventListener("keyup",e=>{
-    e.target.matches("#buscador")
+/* let producto = localStorage.getItem("product */
+ // recorrer local storage
 
-    console.log(e.target.value)
+/*  for (let i = 0; i < localStorage; i++){
+	let clave = localStorage.key(i);
 
-    }) */
+	console.log("clave", clave);
+	console.log("valor", localStorage.getItem(clave));
+ }
+ */
+/* //BUSCADOR
+
 todos_los_productos = ["zapatos nike", "audifonos","reloj","smartwatch", "perfume"]
 document.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
@@ -151,11 +174,4 @@ document.addEventListener("keyup", function(event) {
         alert(msj)
     }
    
-}) 
-
-
-
-
-
-
-
+})  */
