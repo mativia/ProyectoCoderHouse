@@ -14,7 +14,14 @@
 		<header>
 			<h1>Tienda</h1>
 			<!-- buscador -->
-			<div> <input type="text" name="buscador" id="buscador" placeholder="Buscar..."></div>
+			<form>
+				<label for="busqueda">Buscar:</label>
+				<input type="text" id="busqueda" name="busqueda">
+				<button type="button" onclick="mostrarResultados()">Buscar</button>
+				<button type="button" onclick="">limpiar</button>
+			</form>
+
+			<div id="resultados"> </div>
 
 			<div class="container-icon">
 				<div class="container-cart-icon">
@@ -70,8 +77,9 @@
 				</div>
 			</div>
 		</header>
-		<div class="container-items">
-			<div class="item">
+		
+		<div class="container-items" id = "contenedor-productos">
+			<div class="item" id = "item-1">
 				<figure>
 					<img
 						src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
@@ -84,7 +92,7 @@
 					<button class="btn-add-cart">Añadir al carrito</button>
 				</div>
 			</div>
-			<div class="item">
+			<div class="item" id = "item-2">
 				<figure>
 					<img
 						src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
@@ -97,7 +105,7 @@
 					<button class="btn-add-cart">Añadir al carrito</button>
 				</div>
 			</div>
-			<div class="item">
+			<div class="item" id = "item-3">
 				<figure>
 					<img
 						src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1099&q=80"
@@ -110,7 +118,7 @@
 					<button class="btn-add-cart">Añadir al carrito</button>
 				</div>
 			</div>
-			<div class="item">
+			<div class="item" id = "item-4">
 				<figure>
 					<img
 						src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
@@ -123,7 +131,7 @@
 					<button class="btn-add-cart">Añadir al carrito</button>
 				</div>
 			</div>
-			<div class="item">
+			<div class="item" id = "item-5">
 				<figure>
 					<img
 						src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
@@ -137,7 +145,6 @@
 				</div>
 			</div>
 		</div>
-
 		<script src="index.js"></script>
 	</body>
 </html>

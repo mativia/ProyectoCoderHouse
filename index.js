@@ -17,7 +17,7 @@ const productsList = document.querySelector('.container-items');
 // Variable de arreglos de Productos
 let allProducts = [];
 allProducts = JSON.parse(localStorage.getItem('carrito')); 
-let todos_los_productos = [];
+
 
 const valorTotal = document.querySelector('.total-pagar');
 
@@ -124,54 +124,161 @@ const showHTML = () => {
 	});
 	//local storage
 	localStorage.setItem('carrito', JSON.stringify(allProducts));
-	
-	
-	
-	/* const guardar = (clave, valor) => {
-		localStorage.setItem(clave,valor);
-
-	}
-	allProducts.forEach(item => {
-		guardar(item.title, JSON.stringify(item))
-	}) */
-	
 	valorTotal.innerText = `$${total}`;
 	countProducts.innerText = totalOfProducts;
 };
 
-/* let producto = localStorage.getItem('producto');
-let pro = JSON.parse(producto);
-console.log(pro[0]); */
-//Storage 
-/* console.log(localStorage);
-localStorage.setItem("product","01") */
+//arreglo de todos los productos
 
-/* let producto = localStorage.getItem("product */
- // recorrer local storage
+var productoss = [
+	{
+	  nombre: "Zapatos Nike",
+	  descripcion: "Zapatillas deportivas nike ideal para correr",
+	  precio: 80.00
+	},
+	{
+	  nombre: "Audifonos",
+	  descripcion: "Audifonos de alta calidad, especial apra hacer deportes",
+	  precio: 20.00
+	},
+	{
+	  nombre: "Reloj",
+	  descripcion: "Reloj Simple blanco",
+	  precio: 50.00
+	},
+	{
+		nombre: "Smartwatch",
+		descripcion: "Reloj Smart para vincular con tu celular y poder disfrutar de la multimedia mientras realizas actividades deportivas",
+		precio: 90.00
+	},
+	{
+		nombre: "Perfume",
+		descripcion: "Perfume coco noil channel, para salir y que nadie se resista",
+		precio: 50.00
+	},
+	
+  ];
 
-/*  for (let i = 0; i < localStorage; i++){
-	let clave = localStorage.key(i);
+  function buscarProductos(busqueda) {
+	var resultados = [];
+  
+	for (var i = 0; i < productoss.length; i++) {
+	  if (productoss[i].nombre.toLowerCase().includes(busqueda.toLowerCase())) {
+		resultados.push(productoss[i]);
+	  }
+	}
+  
+	return resultados;
+  }
 
-	console.log("clave", clave);
-	console.log("valor", localStorage.getItem(clave));
- }
- */
-/* //BUSCADOR
 
-todos_los_productos = ["zapatos nike", "audifonos","reloj","smartwatch", "perfume"]
-document.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        event.target.matches("#buscador")
-        item_a_buscar = event.target.value;
-        
-        if(todos_los_productos.includes(item_a_buscar)){
-            msj = "el producto existe!"
-        }
-        else { 
-            msj = "el producto no existe!"
-            
-        }
-        alert(msj)
-    }
-   
-})  */
+  function mostrarResultados() {
+	
+	var busqueda = document.getElementById("busqueda").value;
+	var resultados = buscarProductos(busqueda);
+  
+	var resultadosHTML = "";
+	var item = ""
+  
+	for (var i = 0; i < resultados.length; i++) {
+	  //resultadosHTML += "<p>" + resultados[i].nombre + "</p>";
+	  if (resultados[i].nombre == "Zapatos Nike"){
+		resultadosHTML = `
+				<div class="item" id = "item-1">
+					<figure>
+						<img
+							src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+							alt="producto"
+						/>
+					</figure>
+					<div class="info-product">
+						<h2>Zapatos Nike</h2>
+						<p class="price">$80</p>
+						<button class="btn-add-cart">Añadir al carrito</button>
+					</div>
+				</div>`
+		item = "item-1"
+	  }
+
+	 if (resultados[i].nombre == "Audifonos"){
+		resultadosHTML = `
+			<div class="item" id = "item-2">
+				<figure>
+					<img
+						src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Audifonos</h2>
+					<p class="price">$20</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>`
+		item = "item-2"
+	  }
+	  if (resultados[i].nombre == "Reloj"){
+		resultadosHTML = `
+			<div class="item" id = "item-3">
+				<figure>
+					<img
+						src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1099&q=80"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Reloj</h2>
+					<p class="price">$50</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>`
+		item = "item-3"
+	  } 
+	  if (resultados[i].nombre == "Smartwatch"){
+		resultadosHTML = `
+			<div class="item" id = "item-4">
+				<figure>
+					<img
+						src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Smartwatch</h2>
+					<p class="price">$90</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>`
+		item = "item-4"
+	  } 
+	  if (resultados[i].nombre == "Perfume"){
+		resultadosHTML = `
+			<div class="item" id = "item-5">
+				<figure>
+					<img
+						src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Perfume</h2>
+					<p class="price">$50</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>`
+		item = "item-5"
+	  }  
+	}
+
+	
+  if (item != "") {
+	document.getElementById(item).innerHTML = resultadosHTML;
+  }
+  else {
+	document.getElementById("item-1").innerHTML = resultadosHTML;
+	document.getElementById("item-2").innerHTML = resultadosHTML;
+	document.getElementById("item-3").innerHTML = resultadosHTML;
+	document.getElementById("item-4").innerHTML = resultadosHTML;
+	document.getElementById("item-5").innerHTML = resultadosHTML;
+  }
+  }
