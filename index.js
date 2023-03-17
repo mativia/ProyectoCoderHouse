@@ -177,108 +177,44 @@ var productoss = [
 	var busqueda = document.getElementById("busqueda").value;
 	var resultados = buscarProductos(busqueda);
   
-	var resultadosHTML = "";
-	var item = ""
-  
-	for (var i = 0; i < resultados.length; i++) {
-	  //resultadosHTML += "<p>" + resultados[i].nombre + "</p>";
-	  if (resultados[i].nombre == "Zapatos Nike"){
-		resultadosHTML = `
-				<div class="item" id = "item-1">
-					<figure>
-						<img
-							src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-							alt="producto"
-						/>
-					</figure>
-					<div class="info-product">
-						<h2>Zapatos Nike</h2>
-						<p class="price">$80</p>
-						<button class="btn-add-cart">Añadir al carrito</button>
-					</div>
-				</div>`
-		item = "item-1"
-	  }
+	var item_1 = document.getElementById("item-1");
+	var item_2 = document.getElementById("item-2");
+	var item_3 = document.getElementById("item-3");
+	var item_4 = document.getElementById("item-4");
+	var item_5 = document.getElementById("item-5");
 
-	 if (resultados[i].nombre == "Audifonos"){
-		resultadosHTML = `
-			<div class="item" id = "item-2">
-				<figure>
-					<img
-						src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Audifonos</h2>
-					<p class="price">$20</p>
-					<button class="btn-add-cart">Añadir al carrito</button>
-				</div>
-			</div>`
-		item = "item-2"
-	  }
-	  if (resultados[i].nombre == "Reloj"){
-		resultadosHTML = `
-			<div class="item" id = "item-3">
-				<figure>
-					<img
-						src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1099&q=80"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Reloj</h2>
-					<p class="price">$50</p>
-					<button class="btn-add-cart">Añadir al carrito</button>
-				</div>
-			</div>`
-		item = "item-3"
-	  } 
-	  if (resultados[i].nombre == "Smartwatch"){
-		resultadosHTML = `
-			<div class="item" id = "item-4">
-				<figure>
-					<img
-						src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Smartwatch</h2>
-					<p class="price">$90</p>
-					<button class="btn-add-cart">Añadir al carrito</button>
-				</div>
-			</div>`
-		item = "item-4"
-	  } 
-	  if (resultados[i].nombre == "Perfume"){
-		resultadosHTML = `
-			<div class="item" id = "item-5">
-				<figure>
-					<img
-						src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Perfume</h2>
-					<p class="price">$50</p>
-					<button class="btn-add-cart">Añadir al carrito</button>
-				</div>
-			</div>`
-		item = "item-5"
-	  }  
+	item_1.style.display = "grid";
+	item_2.style.display = "grid";
+	item_3.style.display = "grid";
+	item_4.style.display = "grid";
+	item_5.style.display = "grid";
+	
+	for (var i = 0; i < resultados.length; i++) {
+		if (resultados[i].nombre != "Zapatos Nike"){
+			item_1.style.display = "none";}
+		if (resultados[i].nombre != "Audifonos"){
+			item_2.style.display = "none";}
+		if (resultados[i].nombre != "Reloj"){
+			item_3.style.display = "none";}
+		if (resultados[i].nombre != "Smartwatch"){
+			item_4.style.display = "none";}
+		if (resultados[i].nombre != "Perfume"){
+			item_5.style.display = "none";}
+		}
 	}
 
-	
-  if (item != "") {
-	document.getElementById(item).innerHTML = resultadosHTML;
-  }
-  else {
-	document.getElementById("item-1").innerHTML = resultadosHTML;
-	document.getElementById("item-2").innerHTML = resultadosHTML;
-	document.getElementById("item-3").innerHTML = resultadosHTML;
-	document.getElementById("item-4").innerHTML = resultadosHTML;
-	document.getElementById("item-5").innerHTML = resultadosHTML;
-  }
-  }
+	document.getElementById("btnLogo").addEventListener("click", function(){
+		location.reload();
+		
+		});
+
+		
+	document.getElementById("btnLogo").addEventListener("mouseover", function(){
+		this.style.background = "red";
+		
+		});
+
+	document.getElementById("btnLogo").addEventListener("mouseout", function(){
+		this.style.background = "red";
+		
+		});

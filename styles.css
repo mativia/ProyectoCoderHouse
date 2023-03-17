@@ -202,3 +202,15 @@ header{
 .filtro{
     display: none;
 }
+
+/*Search*/
+#search-box{
+    display: grid;
+    text-align: center;
+    padding: 50px;
+}   
+
+#btnLogo{
+    background-color: #ffffff;
+    border-radius: 45%;
+}
