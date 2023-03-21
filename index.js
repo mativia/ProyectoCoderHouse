@@ -203,18 +203,18 @@ var productoss = [
 		}
 	}
 
-	document.getElementById("btnLogo").addEventListener("click", function(){
+	document.getElementById("btn").addEventListener("click", function(){
 		location.reload();
 		
 		});
 
 		
-	document.getElementById("btnLogo").addEventListener("mouseover", function(){
-		this.style.background = "red";
+	document.getElementById("btn").addEventListener("mouseover", function(){
+		this.style.background = "#7f8c8d";
 		
 		});
 
-	document.getElementById("btnLogo").addEventListener("mouseout", function(){
-		this.style.background = "red";
+	document.getElementById("btn").addEventListener("mouseout", function(){
+		this.style.background = "black";
 		
 		});

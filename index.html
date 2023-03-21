@@ -15,7 +15,8 @@
 		
 	<body>
 		<header>
-			<button id="btnLogo">LOGO</button>
+			<!-- <button id="btnLogo">LOGO</button> -->
+			<a href="#" class="button" id="btn">Inicio</a>
 			<div class="container-icon">
 				<div class="container-cart-icon">
 					<svg
@@ -69,13 +70,16 @@
 					<p class="cart-empty">El carrito está vacío</p>
 				</div>
 			</div>
+			
 		</header>
 		<div class="container-search" id = "search-box" role="search">
 			<!-- buscador -->
 			<form>
 				<label for="busqueda">Buscar:</label>
 				<input type="text" id="busqueda" name="busqueda">
-				<button type="button" onclick="mostrarResultados()">Buscar</button>
+				<button type="button" onclick="mostrarResultados()">Buscar
+					<i class="fa fa-envelope"></i> 
+				</button>
 			</form>
 		</div>
 		<div class="container-items" id = "contenedor-productos">
