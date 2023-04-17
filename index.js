@@ -130,7 +130,7 @@ const showHTML = () => {
 
 //arreglo de todos los productos
 
-var productoss = [
+/* var productoss = [
 	{
 	  nombre: "Zapatos Nike",
 	  descripcion: "Zapatillas deportivas nike ideal para correr",
@@ -157,7 +157,19 @@ var productoss = [
 		precio: 50.00
 	},
 	
-  ];
+  ]; */
+
+ let productoss;
+
+ fetch('productos.json')
+ .then(response => response.json())
+ .then(data => {
+   productoss = data.productoss;
+   console.log(productoss); // Verificar que se hayan cargado los datos
+ })
+ .catch(error => console.error(error));
+
+//Buscador
 
   function buscarProductos(busqueda) {
 	var resultados = [];
@@ -202,6 +214,11 @@ var productoss = [
 			item_5.style.display = "none";}
 		}
 	}
+
+	
+	
+	
+//boton de inicio
 
 	document.getElementById("btn").addEventListener("click", function(){
 		location.reload();

@@ -1,0 +1,35 @@
+
+{
+      "productoss": [
+        {
+        "nombre": "Zapatos Nike",
+        "descripcion": "Zapatillas deportivas nike ideal para correr",
+        "precio": 80.00,
+        "disponible": true
+      },
+      {
+        "nombre": "Audifonos",
+        "descripcion": "Audifonos de alta calidad, especial apra hacer deportes",
+        "precio": 20.00,
+        "disponible": true
+      },
+      {
+        "nombre": "Reloj",
+        "descripcion": "Reloj Simple blanco",
+        "precio": 50.00,
+        "disponible": true
+      },
+      {
+        "nombre": "Smartwatch",
+        "descripcion": "Reloj Smart para vincular con tu celular y poder disfrutar de la multimedia mientras realizas actividades deportivas",
+        "precio": 90.00,
+        "disponible": true
+      },
+      {
+        "nombre": "Perfume",
+        "descripcion": "Perfume coco noil channel, para salir y que nadie se resista",
+        "precio": 50.00,
+        "disponible": true
+        }
+    ]
+}
